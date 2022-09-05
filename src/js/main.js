@@ -29,6 +29,12 @@ const closeNav = () => {
 	navItem.forEach(item => item.classList.remove('nav__item--active'))
 }
 
+const clickNav = () => {
+	closeNavBtn.style.display = 'none'
+	navItems.style.display = 'flex'
+	nav.classList.remove('nav--active')
+}
+
 const checkScrollPosition = () => {
 	scrollSection.forEach(section => {
 		const topScroll = window.scrollY
@@ -57,12 +63,11 @@ const closeCookiesAlert = () => {
 	}
 }
 
-cookiesBtn.addEventListener('click', setCookiesAlert)
-window.addEventListener('load', closeCookiesAlert)
-
 burgerBtn.addEventListener('click', openNav)
 closeNavBtn.addEventListener('click', closeNav)
-navItem.forEach(item => item.addEventListener('click', closeNav))
+navItem.forEach(item => item.addEventListener('click', clickNav))
 setCurrentYear()
 window.addEventListener('scroll', checkScrollPosition)
 checkScrollPosition()
+cookiesBtn.addEventListener('click', setCookiesAlert)
+window.addEventListener('load', closeCookiesAlert)
