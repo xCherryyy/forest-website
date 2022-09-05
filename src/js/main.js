@@ -44,9 +44,21 @@ const checkScrollPosition = () => {
 	})
 }
 
-const closeCookiesAlert = () => {
+const setCookiesAlert = () => {
+	localStorage.setItem('popupState', 'hide')
 	cookiesAlert.style.display = 'none'
 }
+
+const closeCookiesAlert = () => {
+	if (localStorage.getItem('popupState') === 'hide') {
+		cookiesAlert.style.display = 'none'
+	} else {
+		cookiesAlert.style.display = 'block'
+	}
+}
+
+cookiesBtn.addEventListener('click', setCookiesAlert)
+window.addEventListener('load', closeCookiesAlert)
 
 burgerBtn.addEventListener('click', openNav)
 closeNavBtn.addEventListener('click', closeNav)
@@ -54,4 +66,3 @@ navItem.forEach(item => item.addEventListener('click', closeNav))
 setCurrentYear()
 window.addEventListener('scroll', checkScrollPosition)
 checkScrollPosition()
-cookiesBtn.addEventListener('click', closeCookiesAlert)
