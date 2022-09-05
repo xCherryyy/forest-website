@@ -50,6 +50,7 @@ const closeCookiesAlert = () => {
 
 burgerBtn.addEventListener('click', openNav)
 closeNavBtn.addEventListener('click', closeNav)
+navItem.forEach(item => item.addEventListener('click', closeNav))
 setCurrentYear()
 window.addEventListener('scroll', checkScrollPosition)
 checkScrollPosition()
