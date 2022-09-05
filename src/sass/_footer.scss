@@ -1,0 +1,99 @@
+@use 'colors' as c;
+
+.footer {
+	font-size: 1.6rem;
+	background-color: c.$dark-white;
+	&__upper {
+		padding: 2em 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__logo {
+		margin: 0.3em 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: c.$black;
+		font-size: 4rem;
+		font-weight: normal;
+		transition: color 0.3s;
+
+		&:hover,
+		&:focus {
+			color: c.$hover-color;
+		}
+
+		img {
+			height: 4rem;
+		}
+	}
+
+	&__site-map {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		&-item {
+			padding: 1.5em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 1em;
+
+			h3 {
+				font-size: 2.2rem;
+			}
+
+			a {
+				color: c.$footer-font-gray;
+				transition: color 0.3s;
+				&:hover,
+				&:focus {
+					color: c.$black;
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		padding: 2em;
+		border-top: 0.1rem solid c.$footer-font-gray;
+		color: c.$footer-font-gray;
+		text-align: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.footer {
+		&__site-map {
+			&-item {
+				padding: 2em;
+				align-items: flex-start;
+			}
+		}
+		&__logo {
+			font-size: 5rem;
+
+			img {
+				height: 5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.footer {
+		&__upper {
+			margin: 0 1em 1em;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		&__logo {
+			margin-top: 1em;
+		}
+	}
+}

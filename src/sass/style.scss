@@ -1,0 +1,53 @@
+@use 'components';
+@use 'nav';
+@use 'header';
+@use 'main';
+@use 'footer';
+@use 'offer';
+@use 'contact';
+@use 'error404';
+@use 'colors' as c;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 9.4rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+textarea {
+	resize: vertical;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	background-color: c.$white;
+	color: c.$black;
+}
+
+@media (min-width: 768px) {
+	html {
+		scroll-padding-top: 7.7rem;
+	}
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="https://github.com/xCherryyy">
+    <meta name="keywords" content="park, las, drzewa, zwiedzanie, rośliny">
+    <meta name="description" content="Masz jakieś pytanie? Skorzystaj z formularza kontaktowego.">
+    <script src="https://kit.fontawesome.com/d73355cf39.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/style.min.css">
+    <link rel="shortcut icon" href="../dist/img/icons/tree-icon.svg" type="image/x-icon">
+    <title>Forest - kontakt</title>
+</head>
+
+<body>
+    <!-- @include 'nav.kit' -->
+    <main class="scroll" id="contact">
+        <section class="contact">
+            <div class="wrapper">
+                <h2 class="section-title">Kontakt</h2>
+                <div class="contact__container">
+                    <form action="" class="contact__form">
+                        <h3>Skontaktuj się z nami korzystając z formularza!</h3>
+                        <div class="contact__box">
+                            <input type="text" id="name" class="contact__input">
+                            <label for="name" class="contact__label">Imię</label>
+                        </div>
+                        <div class="contact__box">
+                            <input type="email" id="email" class="contact__input">
+                            <label for="email" class="contact__label">Adres e-mail</label>
+                        </div>
+                        <div class="contact__box">
+                            <textarea id="msg" class="contact__textarea"></textarea>
+                            <label for="msg" class="contact__label contact__label--textarea">Twoja wiadomość</label>
+                        </div>
+                        <p class="contact__privacy-policy">Wypełniając powyższy formularz wyrażasz zgodę na
+                            przetwarzanie podanych danych, w celu
+                            udzielenia odpowiedzi. <a href="#">Dowiedz się, jak przetwarzamy Twoje
+                                dane.</a></p>
+                        <p class="contact__error">Uzupełnij wszystkie dane!</p>
+                        <input type="submit" value="Wyślij" class="contact__send-btn">
+                    </form>
+                    <div class="contact__info">
+                        <h3>Adres:</h3>
+                        <p class="contact__info-p">31-358 Kraków, ul. Jasnogórska 2</p>
+                        <h3>Zapraszamy w godzinach:</h3>
+                        <p class="contact__info-p">Pn-pt 8:00 - 20:00, sob 10:00 - 16:00</p>
+                        <h3>Zadzwoń do nas!</h3>
+                        <div class="contact__call">
+                            <div class="contact__call-box">
+                                <p>Obsługa klienta:</p>
+                                <a href="tel:123-456-789" class="link">123 456 789</a>
+                            </div>
+                            <div class="contact__call-box">
+                                <p>Zamów&nbsp;przewodnika:</p>
+                                <a href="tel:987-654-321" class="link">987&nbsp;654&nbsp;321</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.238587004069!2d19.889014006854982!3d50.0883591529489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1660611599897!5m2!1spl!2spl"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+    <!-- @include 'footer.kit' -->
+    <!-- @include 'cookies.kit' -->
+    <script src="/dist/js/main.min.js"></script>
+    <script src="/dist/js/contact.min.js"></script>
+</body>
+
+</html>

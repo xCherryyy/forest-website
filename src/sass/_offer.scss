@@ -1,0 +1,54 @@
+@use 'colors' as c;
+
+.sub-offers {
+	margin: 0 1.5em 6em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 3em;
+
+	&-section {
+		margin-top: 7.5em;
+	}
+	.sub-offer {
+		padding: 2em;
+		font-size: 1.8rem;
+		text-align: center;
+		box-shadow: 0.2rem 0.2rem 0.8rem c.$box-shadow;
+		border-radius: 0.8rem;
+		transition: transform 0.3s;
+		&__icon,
+		&__title {
+			margin-bottom: 1em;
+		}
+
+		&__icon {
+			height: 4rem;
+		}
+
+		&__text {
+			line-height: 2.5rem;
+		}
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.sub-offers {
+		.sub-offer {
+			width: 40%;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.sub-offers {
+		.sub-offer {
+			width: 30%;
+		}
+	}
+}

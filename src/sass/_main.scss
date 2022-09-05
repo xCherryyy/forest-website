@@ -1,0 +1,217 @@
+@use 'colors' as c;
+
+.about-us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__img {
+		margin-bottom: 2em;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__text {
+		margin: 0 1.5em;
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		&-heading {
+			margin-bottom: 1em;
+			font-size: 2.5rem;
+			text-align: center;
+		}
+	}
+}
+
+.hero-img {
+	margin: 5em 0 0;
+	position: relative;
+	height: 30em;
+	background-image: url('../../dist/img/girl-640.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		color: c.$white;
+		z-index: 1;
+		h2 {
+			margin: 1.4em;
+			padding: 1em 2em;
+			font-size: 2rem;
+			border: .1rem solid c.$white;
+			text-align: center;
+		}
+	}
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: c.$hero-shadow-green;
+	}
+}
+
+.offer-section {
+	margin-bottom: 5em;
+	&__subtitle {
+		margin-bottom: 2em;
+		font-size: 2.2rem;
+		text-align: center;
+	}
+
+	.offers {
+		margin: 1.5em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+		flex-wrap: wrap;
+		font-size: 1.8rem;
+
+		.offer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 2em;
+			box-shadow: 0.2rem 0.2rem 0.8rem c.$box-shadow;
+			border-radius: 0.8rem;
+			width: 100%;
+			&__name {
+				margin-bottom: 0.5em;
+				font-size: 3rem;
+				font-weight: 400;
+			}
+
+			&__price {
+				margin-bottom: 0.5em;
+				font-size: 4rem;
+				font-weight: bold;
+			}
+
+			&__option {
+				margin-bottom: 0.4em;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 1em;
+
+				&--unavailable {
+					color: c.$gray-color;
+				}
+			}
+
+			&__choose-btn {
+				margin-top: 2em;
+				padding: 0.8em 0;
+				width: 100%;
+				background: none;
+				box-shadow: 0.2rem 0.2rem 0.8rem c.$box-shadow;
+				border-radius: 0.8rem;
+				font-size: 1.8rem;
+				text-align: center;
+				color: c.$btn-font-color;
+				transition: background-color 0.3s;
+
+				&:hover {
+					background-color: c.$btn-bgc-hover;
+				}
+
+				&--special {
+					color: c.$black;
+					background-color: c.$btn-bgc-hover;
+
+					&:hover {
+						background-color: c.$white;
+					}
+				}
+			}
+		}
+	}
+
+	&__more-info {
+		margin: 3em 1.5em 0;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 576px) {
+	.hero-img {
+		&__text {
+			h2 {
+				padding: 1.2em 2.4em;
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.hero-img {
+		&__text {
+			h2 {
+				font-size: 3rem;
+				padding: 1.5em 3em;
+			}
+		}
+	}
+
+	.offer-section {
+		&__subtitle {
+			font-size: 2.4rem;
+		}
+		.offers {
+			.offer {
+				width: 45%;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.about-us {
+		&__box {
+			margin: 0 2em;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 7em;
+		}
+		&__text {
+			width: 50%;
+			line-height: 3rem;
+			&-heading {
+				margin-bottom: 0.5em;
+				text-align: left;
+			}
+		}
+	}
+
+	.hero-img {
+		background-image: url('../../dist/img/girl-1920.jpg');
+
+		&__text {
+			h2 {
+				font-size: 4rem;
+				padding: 1em 3em;
+			}
+		}
+	}
+
+	.offer-section {
+		.offers {
+			.offer {
+				width: 31%;
+			}
+		}
+	}
+}
