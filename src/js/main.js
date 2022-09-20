@@ -1,38 +1,36 @@
 const footerYear = document.querySelector('.footer__year')
-const nav = document.querySelector('.nav')
 const burgerBtn = document.querySelector('.nav__hamburger-box')
-const closeNavBtn = document.querySelector('.nav__close')
-const navItems = document.querySelector('.nav__items')
+const navItemsBox = document.querySelector('.nav__items')
 const navItem = document.querySelectorAll('.nav__item')
 const scrollSection = document.querySelectorAll('.scroll')
-const cookiesBtn = document.querySelector('.cookies-accept')
-const cookiesAlert = document.querySelector('.cookies-alert')
 
 const setCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.textContent = year
 }
 
-const openNav = () => {
-	burgerBtn.style.display = 'none'
-	navItems.style.display = 'flex'
-	closeNavBtn.style.display = 'block'
-	nav.classList.add('nav__active')
-	navItem.forEach(item => item.classList.add('nav__item--active'))
+const handleNavBtn = () => {
+	burgerBtn.classList.toggle('nav__hamburger-box--active')
+
+	if (burgerBtn.classList.contains('nav__hamburger-box--active')) {
+		setTimeout(() => {
+			navItemsBox.classList.add('nav__items--active')
+		}, 0)
+		navItemsBox.classList.add('display-flex')
+	} else {
+		navItemsBox.classList.remove('nav__items--active')
+		setTimeout(() => {
+			navItemsBox.classList.remove('display-flex')
+		}, 300)
+	}
 }
 
 const closeNav = () => {
-	burgerBtn.style.display = 'block'
-	navItems.style.display = 'none'
-	closeNavBtn.style.display = 'none'
-	nav.classList.remove('nav--active')
-	navItem.forEach(item => item.classList.remove('nav__item--active'))
-}
-
-const clickNav = () => {
-	closeNavBtn.style.display = 'none'
-	navItems.style.display = 'flex'
-	nav.classList.remove('nav--active')
+	burgerBtn.classList.remove('nav__hamburger-box--active')
+	navItemsBox.classList.remove('nav__items--active')
+	setTimeout(() => {
+		navItemsBox.classList.remove('display-flex')
+	}, 300)
 }
 
 const checkScrollPosition = () => {
@@ -50,24 +48,8 @@ const checkScrollPosition = () => {
 	})
 }
 
-const setCookiesAlert = () => {
-	localStorage.setItem('popupState', 'hide')
-	cookiesAlert.style.display = 'none'
-}
-
-const closeCookiesAlert = () => {
-	if (localStorage.getItem('popupState') === 'hide') {
-		cookiesAlert.style.display = 'none'
-	} else {
-		cookiesAlert.style.display = 'block'
-	}
-}
-
-burgerBtn.addEventListener('click', openNav)
-closeNavBtn.addEventListener('click', closeNav)
-navItem.forEach(item => item.addEventListener('click', clickNav))
+burgerBtn.addEventListener('click', handleNavBtn)
 setCurrentYear()
 window.addEventListener('scroll', checkScrollPosition)
 checkScrollPosition()
-cookiesBtn.addEventListener('click', setCookiesAlert)
-window.addEventListener('load', closeCookiesAlert)
+navItem.forEach(item => item.addEventListener('click', closeNav))

@@ -2,7 +2,6 @@ const contactInput = document.querySelectorAll('.contact__input')
 const contactTextarea = document.querySelector('.contact__textarea')
 const sendFormBtn = document.querySelector('.contact__send-btn')
 const contactError = document.querySelector('.contact__error')
-const contactLabel = document.querySelectorAll('.contact__label')
 const contactBox = document.querySelectorAll('.contact__box')
 
 const addInputStyles = () => {
